@@ -1,31 +1,26 @@
 import React from 'react';
+import ProductList from './products/product-list.js';
 
 export default class extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [
-        'Browserify',
-        'Babel',
-        'Bootstrap',
-        'Modernizr',
-        'Jest'
-      ]
-    };
-  }
-
   render() {
     return (
-      <div className="hero-unit">
-        <h1>'Allo, 'Allo!</h1>
-        <p>This is a React component.<br/>
-           You now also have:</p>
-        <ul>{this.state.items.map(this.renderItem)}</ul>
+      <div className="container">
+        <header>
+          <h1>
+            ClickNBuy<br />
+            <span className="subheading">Groceries made easy</span>
+          </h1>
+        </header>
+
+        <div className="row">
+          <div className="col-xs-8">
+            <ProductList />
+          </div>
+          <div className="col-xs-4">
+
+          </div>
+        </div>
       </div>
     );
-  }
-
-  renderItem(item, index) {
-    return <li key={index}>{item}</li>;
   }
 }
