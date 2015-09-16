@@ -10,7 +10,7 @@ Implemented with React.
 - Chrome browser
 - Node.JS with NPM
 - Compass (http://compass-style.org/install/)
-- Gulp - `npm install -g gulp`
+- Bower and Gulp - `npm install -g bower gulp`
 
 ### Dependencies
 
