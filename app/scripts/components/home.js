@@ -1,5 +1,7 @@
 import React from 'react';
+
 import ProductList from './products/product-list.js';
+import Basket from './basket/basket.js';
 
 export default class extends React.Component {
   render() {
@@ -17,7 +19,7 @@ export default class extends React.Component {
             <ProductList />
           </div>
           <div className="col-xs-4">
-
+            <Basket />
           </div>
         </div>
       </div>

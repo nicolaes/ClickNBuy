@@ -1,0 +1,43 @@
+$headerBg: #0275d8;
+
+.basket {
+  border: solid 1px $grayBorder;
+
+  header {
+    background-color: $headerBg;
+    border-bottom: solid 1px $grayBorder;
+
+    h4 {
+      margin: 0;
+      padding: 0.5em 0.75em;
+
+      span.item-count {
+        float: right;
+      }
+
+      span.glyphicon {
+        margin-right: 0.5em;
+      }
+    }
+  }
+
+  .basket-item {
+    margin: 0;
+    border-bottom: solid 1px $grayBorder;
+    padding: 0.5em;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .price {
+      text-align: right;
+      font-weight: bold;
+    }
+  }
+
+}

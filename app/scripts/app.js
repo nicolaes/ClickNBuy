@@ -1,4 +1,5 @@
 import 'babel/polyfill';
+import './pubsub.js';
 import React from 'react';
 import Home from './components/home';
 

@@ -1,6 +1,11 @@
 $icon-font-path: "/fonts/bootstrap/";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
 
+$grayBorder: #999;
+
+@import 'basket';
+@import 'products';
+
 body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -16,7 +21,7 @@ h1 {
     font-size: 40px;
     font-style: italic;
     font-weight: normal;
-    color: #999;
+    color: $grayBorder;
   }
 }
 
@@ -24,60 +29,9 @@ h1 {
   content: "\00A3";
 }
 
-ul.products {
+ul {
   padding: 0;
   list-style-type: none;
-
-  .product-item {
-    position: relative;
-    padding: 0;
-    margin-bottom: 1em;
-    border: solid 1px #999;
-    border-left-width: 0;
-    height: 20em;
-    &:nth-child(4n+1) {
-      border-left-width: 1px;
-    }
-
-    .product-image {
-      img {
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-      }
-    }
-
-    .product-details {
-      padding: 0.5em;
-      text-align: center;
-    }
-
-    .cart-actions {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      padding: 0 0.5em 0.5em;
-      text-align: center;
-
-      .price {
-        float: left;
-      }
-
-      .quantity {
-        float: right;
-
-        input {
-          width: 3em;
-          text-align: center;
-        }
-      }
-
-      .add-to-cart {
-        clear: both;
-        margin-bottom: 0;
-      }
-    }
-  }
 }
 
 .browsehappy {
