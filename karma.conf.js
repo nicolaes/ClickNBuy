@@ -40,8 +40,7 @@ module.exports = function(config) {
     plugins: [
       require("karma-webpack"),
       require("karma-jasmine"),
-      require("karma-chrome-launcher"),
-      require("karma-phantomjs-launcher")
+      require("karma-chrome-launcher")
     ],
     reporters: ["dots"],
     port: 9876,

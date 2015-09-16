@@ -23,6 +23,8 @@ bower install
 
 ### Test with `gulp test`
 
+Tests are under `/test/specs/`
+
 
 ## Technical description
 
