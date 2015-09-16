@@ -8,6 +8,7 @@ var browserify = require('browserify');
 var watchify   = require('watchify');
 var source     = require('vinyl-source-stream');
 var path       = require('path');
+var KarmaServer = require('karma').Server;
 
 require('harmonize')();
 
@@ -102,6 +103,14 @@ gulp.task('jest', function () {
     }));
 });
 
+gulp.task('test:unit', ['scripts'], function(done) {
+  new KarmaServer({
+    configFile: path.join(__dirname, '/karma.conf.js'),
+    singleRun: true,
+    autoWatch: false
+  }, done).start();
+});
+
 gulp.task('set-production', function() {
   process.env.NODE_ENV = 'production';
 });
@@ -134,7 +143,7 @@ gulp.task('build:production', sync(['set-production', 'build', 'minify']));
 
 gulp.task('serve:production', sync(['build:production', 'serve']));
 
-gulp.task('test', ['jest']);
+gulp.task('test', ['test:unit']);
 
 gulp.task('default', ['build']);
 
