@@ -10,7 +10,7 @@ export default new class {
       return this.itemsPromise;
     }
 
-    // Using ES6 A+ Promises
+    // Using ES6 Promises
     this.itemsPromise = new Promise((resolve, reject) => {
       $.get('data.json')
         .then((data) => {
@@ -25,6 +25,11 @@ export default new class {
         });
       return;
     });
+
+    this.itemsPromise.catch(() => {
+      this.itemsPromise = null;
+    });
+
     return this.itemsPromise;
   }
 

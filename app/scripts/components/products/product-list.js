@@ -48,7 +48,7 @@ export default class extends React.Component {
               <option value="Price-ASC">Price asc</option>
               <option value="Price-DESC">Price desc</option>
             </select>
-            <input type="submit" value="Sort" className="btn btn-default" />
+            <input type="submit" value="Sort" className="btn btn-default"/>
           </form>
         </div>
         <ul className="products row">

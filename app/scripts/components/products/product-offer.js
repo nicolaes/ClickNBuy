@@ -20,7 +20,7 @@ export default class extends React.Component {
   render() {
     return (
       <li className="product-offer">
-        <span className={this.getOfferIcon()} />
+        <span className={this.getOfferIcon()}/>
         {this.props.offer.Description}
       </li>
     );

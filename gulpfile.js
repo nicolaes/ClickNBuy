@@ -90,20 +90,12 @@ gulp.task('serve', function() {
   gulp.src('dist')
     .pipe($.webserver({
       livereload: true,
-      port: 9000
+      port: 9000,
+      open: true
     }));
 });
 
-gulp.task('jest', function () {
-  var nodeModules = path.resolve('./node_modules');
-  return gulp.src('app/scripts/**/__tests__')
-    .pipe($.jest({
-      scriptPreprocessor: nodeModules + '/babel-jest',
-      unmockedModulePathPatterns: [nodeModules + '/react']
-    }));
-});
-
-gulp.task('test:unit', ['scripts'], function(done) {
+gulp.task('test:unit', function(done) {
   new KarmaServer({
     configFile: path.join(__dirname, '/karma.conf.js'),
     singleRun: true,
@@ -143,7 +135,7 @@ gulp.task('build:production', sync(['set-production', 'build', 'minify']));
 
 gulp.task('serve:production', sync(['build:production', 'serve']));
 
-gulp.task('test', ['test:unit']);
+gulp.task('test', ['test:unit'], function() {});
 
 gulp.task('default', ['build']);
 

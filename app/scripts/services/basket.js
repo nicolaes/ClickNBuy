@@ -3,11 +3,11 @@ import ProductService from './product.js';
 export default new class {
   constructor() {
     this.itemsPromise = null;
+
+    /**
+     * @type [{ product: Product, quantity: 5 }]
+     */
     this.items = [];
-    //let item = {
-    //  product: Product,
-    //  quantity: 5
-    //};
   }
 
   getItems() {

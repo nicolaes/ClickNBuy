@@ -30,7 +30,7 @@ export default class extends React.Component {
       <div className="basket">
         <header>
           <h4>
-            <span className="glyphicon glyphicon-shopping-cart" aria-hidden="true" />
+            <span className="glyphicon glyphicon-shopping-cart" aria-hidden="true"/>
             <span>Basket</span>
             <span className="item-count hidden-xs">
               {this.state.items.length} items
@@ -38,8 +38,8 @@ export default class extends React.Component {
           </h4>
         </header>
 
-        <ul>
-          {this.state.items.map((item) => <BasketItem item={item} />)}
+        <ul className="basketItems">
+          {this.state.items.map((item) => <BasketItem key={item.product.Id} item={item}/>)}
         </ul>
       </div>
     );

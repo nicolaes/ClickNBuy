@@ -54,7 +54,7 @@ export default class extends React.Component {
       return '';
     }
 
-    return <ProductOffer offer={offer} />;
+    return <ProductOffer offer={offer}/>;
   }
 
   render() {
@@ -75,19 +75,20 @@ export default class extends React.Component {
         <form className="cart-actions" onSubmit={this.addToBasket}>
           <p className="quantity hidden-xs">
             <button aria-label="Decrease quantity" onClick={this.decreaseQuantity}>
-              <span className="glyphicon glyphicon-minus" aria-hidden="true" />
+              <span className="glyphicon glyphicon-minus" aria-hidden="true"/>
             </button>
             <input type="number" value={this.state.quantity} onChange={this.setQuantity}
-                   aria-label="Product quantity" ref="quantity" />
+                   aria-label="Product quantity" ref="quantity"/>
             <button aria-label="Increase quantity" onClick={this.increaseQuantity}>
-              <span className="glyphicon glyphicon-plus" aria-hidden="true" />
+              <span className="glyphicon glyphicon-plus" aria-hidden="true"/>
             </button>
           </p>
           <p className="price">
             {this.props.product.Price}
           </p>
+
           <p className="add-to-cart">
-            <input type="submit" className="btn btn-primary" value="Add to basket" />
+            <input type="submit" className="btn btn-primary" value="Add to basket"/>
           </p>
         </form>
       </li>

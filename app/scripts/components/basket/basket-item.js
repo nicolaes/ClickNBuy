@@ -42,6 +42,7 @@ class BasketItem extends React.Component {
           <p className="col-md-4">
             <img src={this.props.item.product.Image} alt={this.props.item.product.Name}/>
           </p>
+
           <p className="col-md-8">
             {this.props.item.product.Name}
           </p>
@@ -51,21 +52,23 @@ class BasketItem extends React.Component {
           <p className="col-md-6 visible-xs">
             Qty: {this.props.item.quantity}
           </p>
+
           <p className="col-md-6 quantity hidden-xs">
             <button aria-label="Decrease quantity in basket" onClick={this.decreaseQuantity}>
-              <span className="glyphicon glyphicon-minus" aria-hidden="true" />
+              <span className="glyphicon glyphicon-minus" aria-hidden="true"/>
             </button>
             <input type="number" value={this.props.item.quantity} onChange={this.setQuantity}
-                   aria-label="Product quantity in basket" />
+                   aria-label="Product quantity in basket"/>
             <button aria-label="Increase quantity in basket" onClick={this.increaseQuantity}>
-              <span className="glyphicon glyphicon-plus" aria-hidden="true" />
+              <span className="glyphicon glyphicon-plus" aria-hidden="true"/>
             </button>
           </p>
           <p className="col-md-3 price">{BasketItem.getItemTotalPrice(this.props.item)}</p>
+
           <p className="col-md-3 remove-from-basket">
             <button aria-label="Remove product from basket" onClick={this.removeFromBasket}>
               <span className="sr-only">Remove product from basket</span>
-              <span className="glyphicon glyphicon-remove" />
+              <span className="glyphicon glyphicon-remove"/>
             </button>
           </p>
         </div>
