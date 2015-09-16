@@ -25,8 +25,11 @@ h1 {
   }
 }
 
-.price:before {
-  content: "\00A3";
+.price {
+  font-weight: bold;
+  &:before {
+    content: "\00A3";
+  }
 }
 
 ul {

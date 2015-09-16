@@ -34,9 +34,15 @@ $headerBg: #0275d8;
       width: 100%;
     }
 
-    .price {
+    .quantity {
+      input {
+        width: 3em;
+        text-align: center;
+      }
+    }
+
+    .remove-from-basket {
       text-align: right;
-      font-weight: bold;
     }
   }
 

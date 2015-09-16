@@ -51,7 +51,7 @@ export default new class {
         if (itemIndex >= 0) {
           this.items[itemIndex].quantity += quantity;
         } else {
-          this.items.push({
+          this.items.unshift({
             product: product,
             quantity: quantity
           });
@@ -61,6 +61,31 @@ export default new class {
         resolve(this.items);
       }, reject);
     });
+  }
+
+  setItemQuantity(productId, quantity) {
+    // Validate quantity
+    quantity = parseInt(quantity);
+    if (isNaN(quantity) || quantity < 0 || quantity > 100)
+      return;
+
+    // Validate item
+    let itemIndex = this.getItemIndexByProductId(productId);
+    if (itemIndex === -1)
+      return;
+
+    // Same quantity?
+    if (this.items[itemIndex].quantity === quantity)
+      return;
+
+    // Modify quantity or delete the item
+    if (quantity > 0) {
+      this.items[itemIndex].quantity = quantity;
+    } else {
+      this.items.splice(itemIndex, 1);
+    }
+
+    $.Topic('BasketService.update').publish(this.items);
   }
 
   getItemIndexByProductId(productId) {

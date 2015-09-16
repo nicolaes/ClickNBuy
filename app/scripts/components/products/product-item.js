@@ -73,7 +73,7 @@ export default class extends React.Component {
         </ul>
 
         <form className="cart-actions" onSubmit={this.addToBasket}>
-          <p className="quantity">
+          <p className="quantity hidden-xs">
             <button aria-label="Decrease quantity" onClick={this.decreaseQuantity}>
               <span className="glyphicon glyphicon-minus" aria-hidden="true" />
             </button>

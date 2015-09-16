@@ -31,8 +31,8 @@ export default class extends React.Component {
         <header>
           <h4>
             <span className="glyphicon glyphicon-shopping-cart" aria-hidden="true" />
-            Basket
-            <span className="item-count">
+            <span>Basket</span>
+            <span className="item-count hidden-xs">
               {this.state.items.length} items
             </span>
           </h4>
